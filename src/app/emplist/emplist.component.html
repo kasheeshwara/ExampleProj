@@ -1,0 +1,19 @@
+<p>emplist works!</p>
+<div>
+<table class="table" >
+<tr>
+    <th>Eid</th>
+    <th>Ename</th>
+    <th>Salary</th>
+    <th>Date of joining</th>
+
+</tr>
+<tr *ngFor="let e of elist ">
+<td>{{e.eid}}</td>
+<td>{{e.ename}}</td>
+<td>{{e.salary}}</td>
+<td>{{e.doj|date}}</td>
+<td><a routerLink="/editemp/{{e.eid}}">Edit Data</a></td>
+</tr>
+</table>
+</div>

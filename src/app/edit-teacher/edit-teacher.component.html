@@ -1,0 +1,23 @@
+<div>
+    <h1 *ngIf="message!=null">{{message}} </h1>
+<form #prform="ngForm" (ngSubmit)="update(prform.value)" class="was-validated">
+    Enter Tid:
+    <input type="number" name="tid" [(ngModel)]="t.tid" #tid=ngModel required/>
+    <span class="invalid-feedback" *ngIf="tid.touched && tid.invalid">Tid is mandatory field</span><br/><br/>
+
+    Enter Tname:
+    <input type="text" name="tname" [(ngModel)]="t.tname" #tname=ngModel minlength="5" required/>
+    <span class="invalid-feedback" *ngIf="tname.touched && tname.invalid">Teacher name should be minimum of 5 characters </span><br/><br/>
+
+    Enter Address:
+    <input type="text" name="taddress" [(ngModel)]="t.taddress" #taddress=ngModel required/>
+    <span class="invalid-feedback" *ngIf="taddress.touched && taddress.invalid">Address is mandatory </span><br/><br/>
+
+    
+
+    <input type="submit" [disabled]=!prform.valid  value="Update" class="primary"/>
+    <button type="reset" > Clear </button>
+    <br/><br/>
+</form>
+</div>
+{{prform.value|json}}

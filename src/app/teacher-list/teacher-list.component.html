@@ -1,0 +1,26 @@
+<div style="margin-top: 100px;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Teacher ID </th>
+            <th> Teacher Name </th>
+            <th> Address </th>
+            <th>Edit/Delete</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of teacherlist">
+            <td>{{t.tid }}</td>
+            <td>{{t.tname}}</td>
+            <td>{{t.taddress}}</td>
+            
+            <td>
+            
+                <a routerLink="/edit-teacher/{{t.tid}}">Edit</a>
+                <button type="button" class="btn btn-primary" (click)="clickMethod(t)">Delete</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
